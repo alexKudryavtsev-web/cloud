@@ -7,6 +7,11 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
+export enum FileType {
+  PHOTOS = 'photos',
+  TRASH = 'trash',
+}
+
 @Entity('files')
 export class FileEntity {
   @PrimaryGeneratedColumn()
@@ -22,7 +27,7 @@ export class FileEntity {
   size: number;
 
   @Column()
-  mimeypes: string;
+  mimetype: string;
 
   @DeleteDateColumn()
   deletedAt: string;
